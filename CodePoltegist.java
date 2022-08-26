@@ -36,7 +36,14 @@ class CodePoltegist{
         }
         driver.findElement(By.xpath("//button[@id='stopButton']")).click();
         Thread.sleep(5000);
+
+        driver.findElement(By.xpath("input[@name='UserName']")).sendKeys("name");
+        driver.findElement(By.xpath("input[@name='Password']")).sendKeys("pwd");
+        driver.findElement(By.xpath("input[@name='login']")).click();
+        CodePoltegist.screenshot();
     }
+
+
 
     public static void screenshot() throws IOException {
         String dateName = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
